@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ReservationController as AdminReservationController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return redirect(route('login'));
+    return view('welcome');
 });
 
 Auth::routes(['verify' => true]);
@@ -30,13 +31,15 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 
         Route::resource('inventory/products', 'App\Http\Controllers\ProductController');
+        Route::get('/productPDF', [ProductController::class, 'productPDF']);
         Route::resource('inventory/categories', 'App\Http\Controllers\ProductCategoryController');
+        Route::get('/categoryPDF', [ProductCategoryController::class, 'categoryPDF']);
         Route::resource('users', 'App\Http\Controllers\UserController');
         Route::resource('clients', 'App\Http\Controllers\ClientController');
         Route::resource('transactions/transfer', 'App\Http\Controllers\TransferController');
         Route::resource('methods', 'App\Http\Controllers\MethodController');
         Route::resource('invoices', 'App\Http\Controllers\InvoiceController');
-        Route::get('invoices/{id}/pdf', [InvoiceController::class, 'generatePDF']);
+        Route::get('/generatePDF/{id}', [InvoiceController::class, 'generatePDF']);
         Route::resource('providers', 'App\Http\Controllers\ProviderController');
 
         Route::resource('transactions', 'App\Http\Controllers\TransactionController')->except(['create', 'show']);

@@ -7,18 +7,19 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Clients</h4>
+                            <h4 class="card-title">Customer</h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('clients.create') }}" class="btn btn-sm btn-primary">Add Client</a>
+                            <a href="{{ route('clients.create') }}" class="btn btn-sm btn-primary">Add Customer</a>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
+                            <th>Document ID</th>
                             <th>Name</th>
-                            <th>Email / Telephone</th>
+                            <th>Email / Phone</th>
                             <th>Balance</th>
                             <th>Purchases</th>
                             <th>Total Payment</th>
@@ -28,7 +29,8 @@
                         <tbody>
                             @foreach ($clients as $client)
                                 <tr>
-                                    <td>{{ $client->name }}-{{ $client->document_id }}</td>
+                                    <td>{{ $client->document_id }}</td>
+                                    <td>{{ $client->name }}</td>
                                     <td>
                                         <a href="mailto:{{ $client->email }}">{{ $client->email }}</a>
                                         <br>

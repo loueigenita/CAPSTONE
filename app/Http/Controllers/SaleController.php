@@ -123,7 +123,7 @@ class SaleController extends Controller
 
         return redirect()
             ->route('sales.show', ['sale' => $sale])
-            ->with('toast_success','Product Successfully Registered.');
+            ->with('toast_success','Product Successfully Added');
     }
 
     public function editproduct(Sale $sale, SoldProduct $soldproduct)

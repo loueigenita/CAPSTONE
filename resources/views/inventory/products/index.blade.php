@@ -10,12 +10,13 @@
                             <h4 class="card-title">Products</h4>
                         </div>
                         <div class="col-4 text-right">
+                            <a href="{{ action('App\Http\Controllers\ProductController@productPDF', $products)}}"  class="btn btn-warning btn-sm"><i class="fas fa-print"></i></a>
+
                             @empty($categories->count() == 0)
                             <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary">New product</a>
                             @else
                             <a href="#" id="btn" class="btn btn-sm btn-primary">New product</a>
                             @endempty
-
                         </div>
                     </div>
                 </div>

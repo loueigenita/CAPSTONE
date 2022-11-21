@@ -11,6 +11,10 @@
                         <div class="col-8">
                             <h4 class="card-title">Sale Summary</h4>
                         </div>
+                        <div class="col-4 text-right">
+                            <a href="{{ route('sales.index') }}" class="btn btn-sm btn-primary">Back to List</a></div>
+                          
+                      </div>
                         @if (!$sale->finalized_at)
                             <div class="col-4 text-right">
                                 @if ($sale->products->count() == 0)
@@ -31,13 +35,13 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped table-bordered shadow">
+                    <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
                             <th>Date</th>
-                            <th>User</th>
-                            <th>Client</th>
-                            <th>products</th>
+                            {{-- <th>User</th> --}}
+                            <th>Customer</th>
+                            <th>Products</th>
                             <th>Total Stock</th>
                             <th>Total Cost</th>
                             <th>Status</th>
@@ -46,8 +50,8 @@
                             <tr>
                                 <td>{{ $sale->id }}</td>
                                 <td>{{ date('d-m-y', strtotime($sale->created_at)) }}</td>
-                                <td>{{ $sale->user->name }}</td>
-                                <td><a href="{{ route('clients.show', $sale->client) }}">{{ $sale->client->name }}<br>{{ $sale->client->document_type }}-{{ $sale->client->document_id }}</a></td>
+                                {{-- <td>{{ $sale->user->name }}</td> --}}
+                                <td><a href="{{ route('clients.show', $sale->client) }}">{{ $sale->client->name }}<br>{{ $sale->client->document_id }}</a></td>
                                 <td>{{ $sale->products->count() }}</td>
                                 <td>{{ $sale->products->sum('qty') }}</td>
                                 <td>{{ $sale->products->sum('total_amount') }}</td>

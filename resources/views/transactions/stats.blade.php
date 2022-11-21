@@ -57,7 +57,7 @@
                             <h4 class="card-title">Pending Balances</h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('clients.index') }}" class="btn btn-sm btn-primary">View Clients</a>
+                            <a href="{{ route('clients.index') }}" class="btn btn-sm btn-primary">View Customer</a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <div class="table-full-width table-responsive">
                         <table class="table table-striped table-bordered shadow text-center">
                             <thead class=" bg-dark text-light">
-                                <th>Client</th>
+                                <th>Customer</th>
                                 <th>Purchases</th>
                                 <th>Transactions</th>
                                 <th>Balance</th>
@@ -74,7 +74,7 @@
                             <tbody>
                                 @foreach($clients as $client)
                                     <tr>
-                                        <td><a href="{{ route('clients.show', $client) }}">{{ $client->name }}<br>{{ $client->document_type }}-{{ $client->document_id }}</a></td>
+                                        <td><a href="{{ route('clients.show', $client) }}">{{ $client->name }}<br>{{ $client->document_id }}</a></td>
                                         <td>{{ $client->sales->count() }}</td>
                                         <td>{{ $client->transactions->sum('amount') }}</td>
                                         <td>
@@ -163,9 +163,9 @@
                     <thead class=" bg-dark text-light">
                         <th>Period</th>
                         <th>Sales</th>
-                        <th>Clients</th>
+                        <th>Customers</th>
                         <th>Total Stock</th>
-                        <th data-toggle="tooltip" data-placement="bottom" title="Promedio de ingresos por cada venta">Average C / V</th>
+                        <th data-toggle="tooltip" data-placement="bottom" title="Average">Average C / V</th>
                         <th>Billed Amount</th>
                         <th>To Finalize</th>
                     </thead>

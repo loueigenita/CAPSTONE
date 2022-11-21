@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary bg-dark elevation-4">
 
     <a href="{{ route('home') }}" class="brand-link">
-        <img src="{{ asset('frontend/images/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-"
+        <img src="{{ asset('frontend/images/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">MDC INVENTORY</span>
     </a>
@@ -18,8 +18,8 @@
                     </p>
                 </a>
             </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
+            <li class="nav-item has-treeview menu-open">
+                <a href="#" class="nav-link active">
                     <i class="nav-icon fas fa-th-large text-red"></i>
                     <p>
                         Inventory
@@ -59,8 +59,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="{{ route('transactions.stats') }}" class="nav-link">
+            <li class="nav-item has-treeview menu-open">
+                <a href="{{ route('transactions.stats') }}" class="nav-link active">
                     <i class="nav-icon fas fa-chart-pie text-red"></i>
                     <p>
                         Transactions
@@ -119,7 +119,7 @@
             <li class="nav-item" @if ($pageSlug == 'clients') class="active " @endif>
                 <a href="{{ route('clients.index') }}" class="nav-link">
                     <i class="fas fa-user nav-icon text-red"></i>
-                    <p>Clients</p>
+                    <p>Customer</p>
                 </a>
             </li>
             <li class="nav-item" @if ($pageSlug == 'providers') class="active " @endif>

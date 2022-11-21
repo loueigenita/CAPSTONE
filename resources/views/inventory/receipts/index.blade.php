@@ -3,10 +3,11 @@
 @section('content')
     @include('alerts.success')
     <div class="row">
-        <div class="card ">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-8">
+        <div class="col-md-12">
+            <div class="card ">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
                         <h4 class="card-title">Receipts</h4>
                     </div>
                     <div class="col-4 text-right">

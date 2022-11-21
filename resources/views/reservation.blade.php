@@ -41,8 +41,21 @@
 
 <!--== 4. Navigation ==-->
 <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
-
     <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="{{ asset('frontends/images/logo.png') }}" class="logo img-responsive">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="Food-fair-toggle">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#about">about</a></li>
@@ -51,9 +64,7 @@
                 <li><a href="#contact">contact</a></li>
 
                 <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
-
             </ul>
-
         </div>
     </div>
 </nav>
@@ -76,7 +87,7 @@
 
 
 <section id="about" class="about">
-    <img src="{{ asset('frontends/images/school.jpg') }}">
+
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -344,7 +355,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="copyright text-center text">
                     <p>
-                        &copy; Copyright, {{ date('Y') }} <a href="#"> MDC CAFETERIA</a> <strong> Developed &amp; <i class="far fa-heart"></i> By: </strong>
+                        &copy; Copyright, {{ date('Y') }} <a href="#"> MDC CAFETERIA</a> <strong> Developed By: </strong>
                         <a href="#" target="_blank"> MDC BSIT STUDENTS</a>
                     </p>
                 </div>

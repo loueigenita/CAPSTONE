@@ -21,7 +21,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Telephone</th>
+                                <th scope="col">Phone</th>
                                 <th scope="col">Payments Made</th>
                                 <th scope="col">Total Payment</th>
                                 <th scope="col">Action</th>

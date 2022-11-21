@@ -19,7 +19,7 @@
                         <table class="table table-striped table-bordered shadow text-center">
                             <thead class=" bg-dark text-light">
                                 <th>Date</th>
-                                <th>Client</th>
+                                <th>Customer</th>
                                 <th>User</th>
                                 <th>Products</th>
                                 <th>Total Stock</th>
@@ -31,7 +31,7 @@
                                 @foreach ($sales as $sale)
                                     <tr>
                                         <td>{{ date('d-m-y', strtotime($sale->created_at)) }}</td>
-                                        <td><a href="{{ route('clients.show', $sale->client) }}">{{ $sale->client->name }}<br>{{ $sale->client->document_type }}-{{ $sale->client->document_id }}</a></td>
+                                        <td><a href="{{ route('clients.show', $sale->client) }}">{{ $sale->client->name }}<br>{{ $sale->client->document_id }}</a></td>
                                         <td>{{ $sale->user->name }}</td>
                                         <td>{{ $sale->products->count() }}</td>
                                         <td>{{ $sale->products->sum('qty') }}</td>

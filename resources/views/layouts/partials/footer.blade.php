@@ -1,7 +1,8 @@
 <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.3
-    </div>
-    <strong>Copyright &copy; 2022-2023 <a href="https.sis.materdeicollege.com">Mater Dei College</a>.</strong> All rights
-    reserved.
+  <div class="copyright text-center text">
+    <p>
+        &copy; Copyright, {{ date('Y') }} <a href="#"> MDC CANTEEN</a> <strong> Developed By: </strong>
+        <a href="#" target="_blank"> MDC BSIT STUDENTS</a>
+    </p>
+</div>
 </footer>

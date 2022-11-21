@@ -6,7 +6,7 @@
                 <option value="client">{{ $client->name }}</option>
                 @endforeach
             </select>
-        <label class="focus-label">Clients</label>
+        <label class="focus-label">Customer</label>
     </div>
     </div>
     <div class="col-sm-6 col-md-3">

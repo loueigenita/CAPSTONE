@@ -19,6 +19,7 @@
     <link href="{{ asset('backend/css/material.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('frontends/css/materialdesignicons.min.css')}}">
 
+
     <!--     Fonts and icons     -->
 
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css')}}">

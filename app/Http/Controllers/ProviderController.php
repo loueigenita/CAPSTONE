@@ -43,7 +43,7 @@ class ProviderController extends Controller
 
         return redirect()
             ->route('providers.index')
-            ->with('toast_success','Successfully Registered Vendor');
+            ->with('toast_success','Added Successfully');
     }
 
     /**

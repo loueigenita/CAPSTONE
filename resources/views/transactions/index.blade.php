@@ -25,7 +25,7 @@
                                 <th>Method</th>
                                 <th>Amount</th>
                                 <th>Reference</th>
-                                <th>Client</th>
+                                <th>Customer</th>
                                 <th>Provider</th>
                                 <th>Transfer</th>
                                 <th>Action</th>
@@ -43,7 +43,7 @@
                                         <td>{{ $transaction->reference }}</td>
                                         <td>
                                             @if ($transaction->client)
-                                                <a href="{{ route('clients.show', $transaction->client) }}">{{ $transaction->client->name }}<br>{{ $transaction->client->document_type }}-{{ $transaction->client->document_id }}</a>
+                                                <a href="{{ route('clients.show', $transaction->client) }}">{{ $transaction->client->name }}<br>{{ $transaction->client->document_id }}</a>
                                             @else
                                                 Does not apply
                                             @endif

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="sweetalert2.min.css">
 <link rel="stylesheet" href="{{asset('assets/demo.css')}}">
 @endsection
-
+<h2 style="font-family: Times New Roman">OVERVIEW :</h2>
 <section class="content">
       <div class="row filts mt-3">
         <!-- ./col -->
@@ -92,7 +92,7 @@
                             <thead class=" bg-dark text-light">
                                 <tr>
                                     <th>Date</th>
-                                    <th>Client</th>
+                                    <th>Customer</th>
                                     <th>Products</th>
                                     <th>Paid out</th>
                                     <th>Total</th>
@@ -103,7 +103,7 @@
                                 @foreach ($unfinishedsales as $sale)
                                     <tr>
                                         <td>{{ date('d-m-y', strtotime($sale->created_at)) }}</td>
-                                        <td><a href="">{{ $sale->client->name }}<br>{{ $sale->client->document_type }}-{{ $sale->client->document_id }}</a></td>
+                                        <td><a href="">{{ $sale->client->name }}<br>{{ $sale->client->document_id }}</a></td>
                                         <td>{{ $sale->products->count() }}</td>
                                         <td>{{ ($sale->transactions->sum('amount')) }}</td>
                                         <td>{{ ($sale->products->sum('total_amount')) }}</td>
@@ -151,7 +151,7 @@
                                 @foreach($lasttransactions as $transaction)
                                     <tr>
                                         <td>
-                                            @if($transaction->type == 'expense')
+                                            @if(!$transaction->type == 'expense')
                                                 Expense
                                             @elseif($transaction->type == 'sale')
                                                 Sale

@@ -24,13 +24,13 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('client_id') ? ' has-danger' : '' }}">
                                     <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                                    <label class="form-control-label" for="input-name">Client</label>
+                                    <label class="form-control-label" for="input-name">Customer</label>
                                     <select name="client_id" id="input-category" class="form-select form-control-alternative{{ $errors->has('client') ? ' is-invalid' : '' }}" required>
                                         @foreach ($clients as $client)
                                             @if($client['id'] == old('client'))
-                                                <option value="{{$client['id']}}" selected>{{$client['name']}} - {{$client['document_type'].$client['document_id']}}</option>
+                                                <option value="{{$client['id']}}" selected>{{$client['name']}} - {{$client['document_id']}}</option>
                                             @else
-                                                <option value="{{$client['id']}}">{{$client['name']}} - {{$client['document_type'].$client['document_id']}}</option>
+                                                <option value="{{$client['id']}}">{{$client['name']}} - {{$client['document_id']}}</option>
                                             @endif
                                         @endforeach
                                     </select>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class ReservationController extends Controller
 {
     public function reserve(Request $request){
+        dd($request->all());
         $this->validate($request,[
             'name' => 'required',
             'phone' => 'required|min:3|max:11',

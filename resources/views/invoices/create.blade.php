@@ -17,10 +17,10 @@
                     <div class="card-body">
                         <form method="post" action="{{ route('invoices.store') }}" autocomplete="off">
                             @csrf
-
+z
                             <h6 class="heading-small text-muted mb-4">Invoice Information</h6>
                             <div class="pl-lg-4">
-                                <label for=""> Client's Name: </label>
+                                <label for=""> Customer Name: </label>
 
                                 <div class="col">
                                     <select id="client" name="client" class="form-control">

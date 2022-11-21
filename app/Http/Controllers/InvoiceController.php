@@ -22,7 +22,7 @@ class InvoiceController extends Controller
         $invoices = Invoice::latest()->paginate(5);
         $products = Product::get();
 
-        return view('invoices.index',compact('clients', 'invoices')) ->with('i', (request()->input('page', 1)-1)*5);
+        return view('invoices.index',compact('clients', 'invoices', 'products')) ->with('i', (request()->input('page', 1)-1)*5);
     }
 
     /**
@@ -100,13 +100,12 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($id);
         return view('invoices.view_invoice', compact('invoice'));
     }
-    public function generatePDF()
-    {
-        $name = Client::get();
-        $invoice = [Invoice::class => 'PDF'];
-        $pdf = PDF::loadView('invoices.cust_inv_details', compact('invoice', 'name'));
 
-        return $pdf->download($invoice = 'invoice.pdf');
+    public function generatePDF($id)
+    {
+        $invoice = Invoice::find($id);
+        $pdf = PDF::loadView('invoices.cust_inv_details', compact('invoice'));
+        return $pdf->stream('Cust_nvoice.pdf');
     }
 
     /**

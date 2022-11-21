@@ -38,8 +38,8 @@
                                     @include('alerts.feedback', ['field' => 'email'])
                                 </div>
                                 <div class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-phone">Telephone</label>
-                                    <input type="text" name="phone" id="input-phone" class="form-control form-control-alternative{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="Telephone" value="{{ old('emphoneail', $provider->phone) }}" required>
+                                    <label class="form-control-label" for="input-phone">Phone</label>
+                                    <input type="text" name="phone" id="input-phone" class="form-control form-control-alternative{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="Phone" value="{{ old('emphoneail', $provider->phone) }}" required>
                                     @include('alerts.feedback', ['field' => 'phone'])
                                 </div>
                                 <div class="form-group{{ $errors->has('paymentinfo') ? ' has-danger' : '' }}">

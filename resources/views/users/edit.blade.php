@@ -30,8 +30,11 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('user_type') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="user_type">{{ __('User Type') }}</label>
-                                    <input type="text" name="input-user_type" id="user_type" class="form-control form-control-alternative{{ $errors->has('user_type') ? ' is-invalid' : '' }}" placeholder="{{ __('User Type') }}" value="{{ old('user_type', $user->user_type) }}" required autofocus>
-                                    @include('alerts.feedback', ['field' => 'user_type'])
+                                    <select type="text" name="user_type" id="user_type" class="form-control form-control-alternative{{ $errors->has('user_type') ? ' is-invalid' : '' }}" placeholder="{{ __('User Type') }}" value="{{ old('user_type', $user->user_type) }}" required autofocus>
+                                        <option value="admin"{{ old('user_type', $user->user_type) === 'admin'? 'selected' : ' '}} >admin</option>
+                                        <option value="user" {{ old('user_type', $user->user_type) === 'user'  ? 'selected' : ' '}} >user</option>
+                                   @include('alerts.feedback', ['field' => 'user_type'])
+                                </select>
                                 </div>
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Email') }}</label>

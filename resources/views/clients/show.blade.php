@@ -5,14 +5,15 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Client Information</h4>
+                <h4 class="card-title">Customer Information</h4>
             </div>
             <div class="card-body">
-                <table class="table">
-                    <thead>
+                <table class="table table-striped table-bordered shadow text-center">
+                    <thead class=" bg-dark text-light">
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Telephone</th>
+                        <th>Document No</th>
+                        <th>Phone</th>
                         <th>Email</th>
                         <th>Balance</th>
                         <th>Purchases</th>
@@ -104,8 +105,8 @@
                 </div>
             </div>
             <div class="card-body">
-                <table class="table">
-                    <thead>
+                <table class="table table-striped table-bordered shadow text-center">
+                    <thead class=" bg-dark text-light">
                         <th>ID</th>
                         <th>Date</th>
                         <th>products</th>

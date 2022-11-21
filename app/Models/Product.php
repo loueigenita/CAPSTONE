@@ -10,6 +10,10 @@ class Product extends Model
     protected $fillable = [
         'name', 'description', 'product_category_id', 'price', 'stock', 'stock_defective'
     ];
+    public function invoice()
+    {
+        return $this->belongsTo('App\Models\Invoice');
+    }
 
     public function category()
     {

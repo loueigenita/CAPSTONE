@@ -1,4 +1,4 @@
-@extends('layouts.admin2',['pageSlug' => 'slider'])
+@extends('layouts.admin2',['pageSlug' => 'dashboard'])
 
 @section('title','Dashboard')
 

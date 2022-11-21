@@ -14,7 +14,7 @@
                             <th>Name</th>
                             <th>Description</th>
                             <th>Email</th>
-                            <th>Telephone</th>
+                            <th>Phone</th>
                             <th>Payment information</th>
                             <th>Payments Made</th>
                             <th>Total Payment</th>

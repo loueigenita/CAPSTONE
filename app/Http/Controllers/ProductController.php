@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\Reservation\Reservation;
 use App\Models\ProductCategory;
 use App\Http\Requests\ProductRequest;
+use Barryvdh\DomPDF\Facade\PDF as PDF;
+
 class ProductController extends Controller
+
 {
     /**
      * Display a listing of the resource.
@@ -63,6 +65,13 @@ class ProductController extends Controller
         $receiveds = $product->receiveds()->latest()->limit(8)->get();
 
         return view('inventory.products.show', compact('product', 'solds', 'receiveds'));
+    }
+
+    public function productPDF()
+    {
+        $products = Product::get();
+        $pdf = PDF::loadView('inventory.products.products_pdf', compact('products'));
+        return $pdf->stream('AllProducts.pdf');
     }
 
     /**

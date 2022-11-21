@@ -64,15 +64,15 @@
     </div>
 </nav>
 
+<!--== 5. Header ==-->
 <section id="header-slider" class="owl-carousel">
-
     @foreach($sliders as $key=>$slider)
         <div class="item">
             <div class="container">
                 <div class="header-content">
                     <h1 class="header-title">{{ $slider->title }}</h1>
                     <p class="header-sub-title">{{ $slider->sub_title }}</p>
-                </div>
+                </div> <!-- /.header-content -->
             </div>
         </div>
     @endforeach
@@ -80,9 +80,8 @@
 
 
 
-<!--== 6. About us ==-->
 <section id="about" class="about">
-    <img src="{{ asset('frontends/images/school.jpg') }}">
+
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -110,6 +109,7 @@
 </section> <!-- /#about -->
 
 
+
 <!--==  7. Afordable Pricing  ==-->
 <section id="menu-list" class="menu-list">
     <div id="w">
@@ -119,7 +119,7 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="section-header">
-                                <h2 class="pricing-title">Our Menu List In Affordable Pricing</h2>
+                                <h2 class="pricing-title">Our Menu List</h2>
                                 <ul id="filter-list" class="clearfix">
                                     <li class="filter" data-filter="all">All</li>
                                     @foreach($categories as $category)
@@ -153,11 +153,6 @@
                             </li>
                         @endforeach
                     </ul>
-
-                    <!-- <div class="text-center">
-                            <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
-                    </div> -->
-
                 </div>
             </div>
         </div>
@@ -174,7 +169,7 @@
         <div class="container-fluid">
             <div class="row dis-table">
                 <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
-                    <h2 class="section-title">Reserve A Food</h2>
+                    <h2 class="section-title">Reserve a Food !</h2>
                 </div>
                 <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
 
@@ -232,7 +227,7 @@
 
 
                                 <div class="col-md-12 col-sm-12">
-                                    <textarea type="text" name="message" class="form-control reserve-form empty iconified" id="message" rows="3"  placeholder="  &#xf086;  We're listening"></textarea>
+                                    <textarea type="text" name="message" class="form-control reserve-form empty iconified" id="message" rows="3"  placeholder="  &#xf086;  Other Concern's"></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12">
@@ -354,7 +349,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="copyright text-center text">
                     <p>
-                        &copy; Copyright, {{ date('Y') }} <a href="#"> MDC CAFETERIA</a> <strong> Developed &amp; <i class="far fa-heart"></i> By: </strong>
+                        &copy; Copyright, {{ date('Y') }} <a href="#"> MDC CAFETERIA</a> <strong> Developed By: </strong>
                         <a href="#" target="_blank"> MDC BSIT STUDENTS</a>
                     </p>
                 </div>
@@ -363,11 +358,7 @@
     </div>
 </footer>
 
-
-
-<script src="script.js"></script>
 <script data-main="dist/js/" src="js/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{{ asset('frontends/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('frontends/js/owl.carousel.min.js') }}"></script>
@@ -380,33 +371,29 @@
 <script src="{{ asset('frontends/js/bootstrap-datetimepicker.min.js') }}"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-<script src="{{ asset('frontends/js/jquery-1.11.2.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('frontends/js/jquery.flexslider.min.js') }}"></script>
-
-<script src="{{ asset('frontends/js/jquery-1.11.2.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('frontends/js/jquery.flexslider.min.js') }}"></script>
-<script type="text/javascript">
-    $(window).load(function() {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            controlsContainer: ".flexslider-container"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+<script>
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            format: "dd MM yyyy - HH:11 P",
+            showMeridian: true,
+            autoclose: true,
+            todayBtn: true
         });
-    });
+    })
 </script>
 
 
 </body>
+<style>
+    @foreach($sliders as $key=>$slider)
 
-    <style>
-        @foreach($sliders as $key=>$slider)
-
-            .owl-carousel .owl-wrapper, .owl-carousel .owl-item:nth-child({{ $key + 1 }}) .item
-            {
-                background: url({{ asset('uploads/slider/'.$slider->image) }});
-                background-size: cover;
-            }
-        @endforeach
-    </style>
-
+        .owl-carousel .owl-wrapper, .owl-carousel .owl-item:nth-child({{ $key + 1 }}) .item
+        {
+            background: url({{ asset('uploads/slider/'.$slider->image) }});
+            background-size: cover;
+        }
+    @endforeach
+</style>
 
 </html>

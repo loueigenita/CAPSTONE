@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
-use App\Models\Reservation\Reservation;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\ProductCategoryRequest;
+use Barryvdh\DomPDF\Facade\PDF as PDF;
 
 class ProductCategoryController extends Controller
 {
@@ -60,6 +60,12 @@ class ProductCategoryController extends Controller
             'category' => $category,
             'products' => Product::where('product_category_id', $category->id)->paginate(8)
         ]);
+    }
+    public function categoryPDF()
+    {
+        $categories = ProductCategory::get();
+        $pdf = PDF::loadView('inventory.categories.category_pdf', compact('categories'));
+        return $pdf->stream('Category.pdf');
     }
 
     /**

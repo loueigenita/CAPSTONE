@@ -1,9 +1,11 @@
 <div class=" sidebar">
 
     <div class="logo">
-        <a href="#" class="simple-text">
+        <img src="../frontend/images/logo.png" class="brand-image img-circle elevation-2"
+                            height="15%" width="15%">
+        <span class="simple-text">
            MDC's Cafeteria
-        </a>
+        </span>
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
@@ -49,7 +51,30 @@
                     <p>Contact Message</p>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('home') }}">
+                    <i class="material-icons">arrow_circle_left</i>
+                    <p>Main Dashboard</p>
+                </a>
+            </li>
 
         </ul>
     </div>
 </div>
+<style>
+.image-circle {
+    border-radius: 50%;
+}
+
+.elevation-4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+}
+
+.brand-image {
+    float: left;
+    margin-left: .8rem;
+    margin-right: .5rem;
+    margin-top: 3px;
+
+}
+</style>
