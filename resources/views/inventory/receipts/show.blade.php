@@ -39,7 +39,7 @@
                             <th>Title</th>
                             <th>User</th>
                             <th>Provider</th>
-                            <th>products</th>
+                            <th>Products</th>
                             <th>Stock</th>
                             <th>Defective Stock</th>
                             <th>Status</th>

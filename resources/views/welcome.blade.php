@@ -260,6 +260,7 @@
 	.txt p {
 		font-weight: bold;
 		font-size: 20px;
+		text-align: center;
 	}
 
 	@-webkit-keyframes zoomin {
@@ -288,9 +289,9 @@
 
 
 	/* 5 */
-	@media (max-width: 991px) and (min-width: 768px) {
+	@media (max-width: 1980px) and (min-width: 768px) {
 		.myslide {
-			height: 1000px;
+			height: auto;
 		}
 
 		.txt {

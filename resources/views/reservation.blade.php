@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>MDC CAFETERIA</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
     <link rel="stylesheet" href="css/bootstrap-multiselect.css">
     <link rel="stylesheet" href="{{ asset('frontends/css/bootstrap.min.css') }}">
@@ -38,7 +34,6 @@
 
 </head>
 <body data-spy="scroll" data-target="#template-navbar">
-
 <!--== 4. Navigation ==-->
 <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
     <div class="container">
@@ -50,11 +45,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <img id="logo" src="{{ asset('frontends/images/logo.png') }}" class="logo img-responsive">
-            </a>
+            {{-- <div id="logo"><img src="../frontends/mdc/logocanteen.png">
+            </div> --}}
+            
         </div>
-
+    
+        
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="Food-fair-toggle">
             <ul class="nav navbar-nav navbar-right">
@@ -329,6 +325,7 @@
             </div>
         </div>
     </div>
+    
 
     <script>
     $(document).ready(function() {
@@ -365,6 +362,9 @@
 </footer>
 
 <script data-main="dist/js/" src="js/require.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{{ asset('frontends/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('frontends/js/owl.carousel.min.js') }}"></script>
@@ -401,5 +401,24 @@
         }
     @endforeach
 </style>
+<style>
+    .image-circle {
+		border-radius: 50%;
+	}
+
+	.elevation-4 {
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+	}
+
+	.brand-image {
+		float: left;
+		height: 60px;
+		width: 60px;
+		margin-left: .8rem;
+		margin-right: .5rem;
+		margin-top: 3px;
+
+	}
+    </style>
 
 </html>

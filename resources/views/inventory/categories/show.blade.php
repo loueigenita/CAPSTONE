@@ -12,7 +12,7 @@
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
                             <th>Name</th>
-                            <th>products</th>
+                            <th>Products</th>
                             <th>Stocks</th>
                             <th>Stocks Faulty</th>
                             <th>Average Price</th>
@@ -42,6 +42,7 @@
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
+                            <th>Description</th>
                             <th>Name</th>
                             <th>Stock</th>
                             <th>Defective Stock</th>
@@ -54,7 +55,8 @@
                         <tbody>
                             @foreach ($products as $product)
                                 <tr>
-                                    <td><a href="{{ route('products.show', $product) }}">{{ $product->id }}</a></td>
+                                    <td>{{$product->id}}</td>
+                                    <td>{{$product->description}}</td>
                                     <td><a href="{{ route('products.show', $product) }}">{{ $product->name }}</a></td>
                                     <td>{{ $product->stock }}</td>
                                     <td>{{ $product->stock_defective }}</td>
