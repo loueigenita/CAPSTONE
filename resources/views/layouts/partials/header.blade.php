@@ -66,7 +66,7 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
               <span class="dropdown-item dropdown-header text-center">CONCERNS</span>
               <div class="dropdown-divider"></div>
-              <a href="{{route('contact.index')}}" class="dropdown-item dropdown-footer"><i class="fas fa-check text-warning"></i> Read Messages<span class="badge badge-primary">{{ $reservations1->count()}}</a>
+              <a href="{{route('contact.index')}}" class="dropdown-item dropdown-footer"><i class="fas fa-check text-warning"></i> Read Messages<span class="badge badge-primary">{{ $contacts->count()}}</a>
             </div>
         </li>
         
