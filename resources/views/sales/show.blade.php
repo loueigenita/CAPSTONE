@@ -35,6 +35,7 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
@@ -60,7 +61,7 @@
                         </tbody>
                     </table>
                 </div>
-
+                </div>
             </div>
         </div>
     </div>
@@ -80,6 +81,7 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>

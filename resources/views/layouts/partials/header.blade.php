@@ -42,7 +42,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown mt-2">
-                <a class="navbar-link" data-toggle="dropdown">
+                <a class="navbar-link" data-toggle="dropdown" data-bs-toggle="dropdown">
                     <i class="fas fa-bell"></i>
                   @empty($reservations->count() == 0)
                     <span class="fas fa-solid fa-circle font-weight-bold text-danger navbar-badge"></span>
@@ -57,7 +57,7 @@
             </li>
 
             <li class="nav-item dropdown mt-2">
-            <a class="navbar-link mx-4" data-toggle="dropdown">
+            <a class="navbar-link mx-4" data-toggle="dropdown" data-bs-toggle="dropdown">
                 <i class="fas fa-comment text-warning"></i>
               @empty($contacts->count() == 0)
                 <span class="fas fa-solid fa-circle font-weight-bold text-danger navbar-badge"></span>
@@ -71,7 +71,7 @@
         </li>
         
         <li class="nav-item dropdown user-menu">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown">
                 <img src="{{ asset('frontend/images/logo.png') }}"
                     class="user-image img-circle elevation-2" alt="User Image">
                 <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>

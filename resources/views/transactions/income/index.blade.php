@@ -15,9 +15,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    @include('alerts.success')
-
-                    <div class="">
+                    <div class="table-full-width table-responsive">
                         <table class="table table-striped table-bordered shadow text-center">
                             <thead class=" bg-dark text-light">
                                 <th scope="col">Date</th>

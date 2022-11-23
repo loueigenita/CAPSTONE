@@ -8,6 +8,7 @@
                     <h4 class="card-title">Product Information</h4>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
@@ -46,6 +47,7 @@
                     <h4 class="card-title">Latest Sales</h4>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>Date</th>
@@ -84,6 +86,7 @@
                     <h4 class="card-title">Latest Receipts</h4>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>Date</th>

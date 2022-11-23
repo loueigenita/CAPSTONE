@@ -32,6 +32,7 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>

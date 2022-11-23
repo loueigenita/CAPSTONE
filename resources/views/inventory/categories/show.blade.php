@@ -8,6 +8,7 @@
                     <h4 class="card-title">Category Information</h4>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
@@ -36,9 +37,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">products: {{ $products->count() }}</h4>
+                    <h4 class="card-title">Products: {{ $products->count() }}</h4>
                 </div>
                 <div class="card-body">
+                    <div class="table-full-width table-responsive">
                     <table class="table table-striped table-bordered shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
