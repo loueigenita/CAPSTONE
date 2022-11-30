@@ -45,9 +45,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            {{-- <div id="logo"><img src="../frontends/mdc/logocanteen.png">
-            </div> --}}
+
             
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="{{ asset('frontends/mdc/MDC.png') }}" class="logo img-responsive">
+            </a>
         </div>
     
         
@@ -83,7 +85,6 @@
 
 
 <section id="about" class="about">
-
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -94,14 +95,15 @@
                     <div class="section-content">
                         <h2 class="section-content-title">ABOUT US</h2>
                         <p class="section-content-para">
-                            <p>
                             <b>Vision:</b> Mater Dei College is a community of dedicated educators and community-oriented students who believe in the search for truth that leads
                             to wisdom; unselfish living through service as an expression of charity and the pursuit of prayer life through living the Gospel, as exemplified by
-                            Mary, the mother of God in whose honor the college identifies herself.</p>
+                            Mary, the mother of God in whose honor the college identifies herself.
+                        </p>
 
-                            <p> <b>Mission:</b> Mater Dei College commits herself to provide a holistic Catholic education to deserving youth with preferential option for the
+                        <p class="section-content-para">
+                         <b>Mission:</b> Mater Dei College commits herself to provide a holistic Catholic education to deserving youth with preferential option for the
                             economically-disadvantaged of northern Bohol to enable them to become responsible citizens and servant leaders in nation building.
-                            </p>
+                        </p>
                         </p>
                     </div> <!-- /.section-content -->
                 </div>
@@ -143,7 +145,7 @@
                         @foreach($items as $item)
                             <li class="item" id="{{ $item->category->slug }}">
                                 <a href="#">
-                                    <img src="{{ asset('uploads/item/'.$item->image) }}" class="img-responsive" alt="Item" style="height: 300px; width: 369px;" >
+                                    <img src="{{ asset('uploads/item/'.$item->image) }}" class="img-responsive" alt="Item" style="height: 200px; width: 269px;" >
                                     <div class="menu-desc text-center">
                                             <span>
                                                 <h3>{{ $item->name }}</h3>
@@ -171,7 +173,7 @@
         <div class="container-fluid">
             <div class="row dis-table">
                 <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
-                    <h2 class="section-title">Reserve a Food !</h2>
+                    <h2 class="section-title">Reserve Food !</h2>
                 </div>
                 <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
 
@@ -213,7 +215,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <select name="items" id="items" class="mul_select" multiple="true" size="6">
+                                        <select name="items[]" id="items" class="mul_select" multiple="true" size="6">
                                         @forelse ($items as $item )
 
                                         <option value="{{ $item->name }}">{{ $item->name }}</option>
@@ -254,12 +256,6 @@
                             <div class="launch">
                                 <h4>Lunch</h4>
                                 <p>Mon to Fri: 12:00 PM - 5:00 PM</p>
-                            </div>
-
-                            <div class="dinner">
-                                <h4>Dinner</h4>
-                                <p>Mon to Sat: 6:00 PM - 1:00 AM</p>
-                                <p>Sun: 5:30 PM - 12:00 AM</p>
                             </div>
                         </div>
                     </div>
@@ -401,24 +397,5 @@
         }
     @endforeach
 </style>
-<style>
-    .image-circle {
-		border-radius: 50%;
-	}
-
-	.elevation-4 {
-		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
-	}
-
-	.brand-image {
-		float: left;
-		height: 60px;
-		width: 60px;
-		margin-left: .8rem;
-		margin-right: .5rem;
-		margin-top: 3px;
-
-	}
-    </style>
 
 </html>

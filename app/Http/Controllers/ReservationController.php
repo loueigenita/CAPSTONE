@@ -23,7 +23,7 @@ class ReservationController extends Controller
         $reservation->phone = $request->phone;
         $reservation->email = $request->email;
         $reservation->date_and_time = $request->dateandtime;
-        $reservation->items = $request->items;
+        $reservation->items = implode(' | ',$request->items);
         $reservation->message = $request->message;
         $reservation->status = false;
         $reservation->save();

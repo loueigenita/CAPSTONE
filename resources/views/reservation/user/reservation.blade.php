@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <img id="logo" src="{{ asset('frontends/images/logo.png') }}" class="logo img-responsive">
+                <img id="logo" src="{{ asset('frontends/mdc/MDC.png') }}" class="logo img-responsive">
             </a>
         </div>
 
