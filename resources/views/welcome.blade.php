@@ -23,8 +23,8 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="#hero" data-after="Home">LOGIN</a></li>
-            <li><a href="#services" data-after="Service">REGISTER</a></li>
+            <li><a href="{{route('login')}}" data-after="Home">LOGIN</a></li>
+            <li><a href="{{route('register')}}" data-after="Service">REGISTER</a></li>
           </ul>
         </div>
       </div>
@@ -873,3 +873,5 @@ menu_item.forEach((item) => {
 </script>
 
 </html>
+
+

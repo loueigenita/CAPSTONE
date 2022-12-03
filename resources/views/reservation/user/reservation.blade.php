@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>MDC CAFETERIA</title>
-
-    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
     <link rel="stylesheet" href="css/bootstrap-multiselect.css">
     <link rel="stylesheet" href="{{ asset('frontends/css/bootstrap.min.css') }}">
@@ -20,13 +18,22 @@
     <link rel="stylesheet" href="{{ asset('frontends/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('frontends/css/bootstrap-datetimepicker.min.css') }}">
 
-    
+
+    <script src="{{ asset('frontends/js/jquery-1.11.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('frontends/js/jquery.flexslider.min.js') }}"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlsContainer: ".flexslider-container"
+            });
+        });
+    </script>
 
 
 
 </head>
 <body data-spy="scroll" data-target="#template-navbar">
-
 <!--== 4. Navigation ==-->
 <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
     <div class="container">
@@ -38,11 +45,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
+            
             <a class="navbar-brand" href="#">
                 <img id="logo" src="{{ asset('frontends/mdc/MDC.png') }}" class="logo img-responsive">
             </a>
         </div>
-
+    
+        
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="Food-fair-toggle">
             <ul class="nav navbar-nav navbar-right">
@@ -50,7 +60,6 @@
                 <li><a href="#menu-list">menu list</a></li>
                 <li><a href="#reserve">reservation</a></li>
                 <li><a href="#contact">contact</a></li>
-
                 <li>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         Logout
@@ -63,6 +72,7 @@
         </div>
     </div>
 </nav>
+
 
 <!--== 5. Header ==-->
 <section id="header-slider" class="owl-carousel">
@@ -81,7 +91,6 @@
 
 
 <section id="about" class="about">
-
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -92,14 +101,15 @@
                     <div class="section-content">
                         <h2 class="section-content-title">ABOUT US</h2>
                         <p class="section-content-para">
-                            <p>
                             <b>Vision:</b> Mater Dei College is a community of dedicated educators and community-oriented students who believe in the search for truth that leads
                             to wisdom; unselfish living through service as an expression of charity and the pursuit of prayer life through living the Gospel, as exemplified by
-                            Mary, the mother of God in whose honor the college identifies herself.</p>
+                            Mary, the mother of God in whose honor the college identifies herself.
+                        </p>
 
-                            <p> <b>Mission:</b> Mater Dei College commits herself to provide a holistic Catholic education to deserving youth with preferential option for the
+                        <p class="section-content-para">
+                         <b>Mission:</b> Mater Dei College commits herself to provide a holistic Catholic education to deserving youth with preferential option for the
                             economically-disadvantaged of northern Bohol to enable them to become responsible citizens and servant leaders in nation building.
-                            </p>
+                        </p>
                         </p>
                     </div> <!-- /.section-content -->
                 </div>
@@ -141,7 +151,7 @@
                         @foreach($items as $item)
                             <li class="item" id="{{ $item->category->slug }}">
                                 <a href="#">
-                                    <img src="{{ asset('uploads/item/'.$item->image) }}" class="img-responsive" alt="Item" style="height: 300px; width: 369px;" >
+                                    <img src="{{ asset('uploads/item/'.$item->image) }}" class="img-responsive" alt="Item" style="height: 200px; width: 269px;" >
                                     <div class="menu-desc text-center">
                                             <span>
                                                 <h3>{{ $item->name }}</h3>
@@ -169,7 +179,7 @@
         <div class="container-fluid">
             <div class="row dis-table">
                 <div class="col-xs-6 col-sm-6 dis-table-cell color-bg">
-                    <h2 class="section-title">Reserve a Food !</h2>
+                    <h2 class="section-title">Reserve Food !</h2>
                 </div>
                 <div class="col-xs-6 col-sm-6 dis-table-cell section-bg">
 
@@ -211,7 +221,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <select name="items" id="items" class="mul_select" multiple="true" size="6">
+                                        <select name="items[]" id="items" class="mul_select" multiple="true" size="6">
                                         @forelse ($items as $item )
 
                                         <option value="{{ $item->name }}">{{ $item->name }}</option>
@@ -252,12 +262,6 @@
                             <div class="launch">
                                 <h4>Lunch</h4>
                                 <p>Mon to Fri: 12:00 PM - 5:00 PM</p>
-                            </div>
-
-                            <div class="dinner">
-                                <h4>Dinner</h4>
-                                <p>Mon to Sat: 6:00 PM - 1:00 AM</p>
-                                <p>Sun: 5:30 PM - 12:00 AM</p>
                             </div>
                         </div>
                     </div>
@@ -323,6 +327,7 @@
             </div>
         </div>
     </div>
+    
 
     <script>
     $(document).ready(function() {
@@ -359,6 +364,9 @@
 </footer>
 
 <script data-main="dist/js/" src="js/require.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{{ asset('frontends/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('frontends/js/owl.carousel.min.js') }}"></script>
