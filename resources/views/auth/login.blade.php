@@ -9,6 +9,7 @@
         <div class="signin-image">
             <figure><img src="{{ asset('frontend') }}/images/logo.png" alt="image"></figure>
         </div>
+        
         <div class="signin-form">
             <h2 class="form-title">LOG IN</h2>
             <form method="POST" action="{{ route('login') }}" class="register-form" id="login-form">

@@ -20,11 +20,6 @@ class Product extends Model
         return $this->belongsTo('App\Models\ProductCategory', 'product_category_id');
     }
 
-    public function solds()
-    {
-        return $this->hasMany('App\Models\SoldProduct');
-    }
-
     public function receiveds()
     {
         return $this->hasMany('App\Models\ReceivedProduct');

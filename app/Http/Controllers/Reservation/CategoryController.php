@@ -16,7 +16,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('reservation.admin.category.index',compact('categories'));
+        $categories = Category::paginate(10);
+        return view('inventory.Food Category.index',compact('categories'));
     }
 
     /**
@@ -26,7 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('reservation.admin.category.create');
+        return view('inventory.Food Category.create');
     }
 
     /**
@@ -67,7 +68,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('reservation.admin.category.edit',compact('category'));
+        return view('inventory.Food Category.edit',compact('category'));
     }
 
     /**

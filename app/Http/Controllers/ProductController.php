@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         $categories = ProductCategory::get();
 
-        $products = Product::paginate(8);
+        $products = Product::paginate(10);
 
         return view('inventory.products.index', compact('products','categories'));
     }
@@ -60,11 +60,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $solds = $product->solds()->latest()->limit(8)->get();
 
-        $receiveds = $product->receiveds()->latest()->limit(8)->get();
-
-        return view('inventory.products.show', compact('product', 'solds', 'receiveds'));
+        return view('inventory.products.show', compact('product'));
     }
 
     public function productPDF()

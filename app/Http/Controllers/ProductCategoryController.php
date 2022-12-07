@@ -18,7 +18,7 @@ class ProductCategoryController extends Controller
     public function index(ProductCategory $model)
     {
         // $reservations = Reservation::get();
-        $categories = ProductCategory::paginate(8);
+        $categories = ProductCategory::paginate(10);
 
         return view('inventory.categories.index', compact('categories'));
     }

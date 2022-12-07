@@ -27,12 +27,7 @@
                     </p>
                 </a>
                 <ul class="nav-treeview" @if ($pageSlug == 'istats') class="active " @endif>
-                    <li class="nav-item">
-                        <a href="{{ route('inventory.stats') }}" class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Statistics</p>
-                        </a>
-                    </li>
+                
                     <li class="nav-item" @if ($pageSlug == 'products') class="active " @endif>
                         <a href="{{ route('products.index') }}" class="nav-link">
                             <i class="far fa-circle"></i>
@@ -45,95 +40,59 @@
                             <p>Categories</p>
                         </a>
                     </li>
-                    <li class="nav-item" @if ($pageSlug == 'receipts') class="active " @endif>
-                        <a href="{{ route('receipts.index') }}" class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Receipts</p>
-                        </a>
-                    </li>
                     <li class="nav-item" @if ($pageSlug == 'invoices') class="active " @endif>
                         <a href="{{ route('invoices.index') }}" class="nav-link">
                             <i class="far fa-circle fa-solid"></i>
                             <p>Invoices</p>
                         </a>
                     </li>
-                </ul>
-            </li>
-            <li class="nav-item has-treeview menu-open">
-                <a href="{{ route('transactions.stats') }}" class="nav-link active">
-                    <i class="nav-icon fas fa-chart-pie text-red"></i>
-                    <p>
-                        Transactions
-                    </p>
-                    <i class="right fas fa-angle-left text-red"></i>
-                </a>
-                <ul class="nav nav-treeview">
-                    <li class="nav-item" @if ($pageSlug == 'transactions') class="active " @endif>
-                        <a href="{{ route('transactions.index') }}" class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>All</p>
-                        </a>
-                    </li>
-                    <li class="nav-item" @if ($pageSlug == 'istats') class="active " @endif>
-                        <a href="{{ route('transactions.stats') }}" class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Statistics</p>
-                        </a>
-                    </li>
 
-                    <li class="nav-item" @if ($pageSlug == 'sales') class="active " @endif>
-                        <a href="{{ route('sales.index') }}" class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Sales</p>
+
+                    {{-- RESERVATION AREA --}}
+
+                    <li class="nav-item" @if ($pageSlug == 'item') class="active " @endif>
+                        <a href="{{ route('item.index') }}" class="nav-link">
+                            <i class="far fa-circle fa-solid"></i>
+                            <p>Food Items</p>
                         </a>
                     </li>
-                    <li class="nav-item" @if ($pageSlug == 'expense') class="active " @endif>
-                        <a href="{{ route('transactions.type', ['type' => 'expense']) }}"
-                            class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Expenses</p>
+                    <li class="nav-item" @if ($pageSlug == 'category') class="active " @endif>
+                        <a href="{{ route('category.index') }}" class="nav-link">
+                            <i class="far fa-circle fa-solid"></i>
+                            <p>Food Categories</p>
                         </a>
                     </li>
-                    <li class="nav-item" @if ($pageSlug == 'income') class="active " @endif>
-                        <a href="{{ route('transactions.type', ['type' => 'income']) }}"
-                            class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Income</p>
+                    <li class="nav-item" @if ($pageSlug == 'slider') class="active " @endif>
+                        <a href="{{ route('slider.index') }}" class="nav-link">
+                            <i class="far fa-circle fa-solid"></i>
+                            <p>Food Sliders</p>
                         </a>
                     </li>
-                    <li class="nav-item" @if ($pageSlug == 'transfer') class="active " @endif>
-                        <a href="{{ route('transfer.index') }}" class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Transfers</p>
+                    <li class="nav-item" @if ($pageSlug == 'reservation') class="active " @endif>
+                        <a href="{{ route('reservation.index') }}" class="nav-link">
+                            <i class="far fa-circle fa-solid"></i>
+                            <p>Food Reservations</p>
                         </a>
                     </li>
-                    <li class="nav-item" @if ($pageSlug == 'transactions') class="active " @endif>
-                        <a href="{{ route('transactions.type', ['type' => 'payment']) }}"
-                            class="nav-link">
-                            <i class="far fa-circle"></i>
-                            <p>Payments</p>
-                        </a>
-                    </li>
+                    
                 </ul>
             </li>
+            
             <li class="nav-item" @if ($pageSlug == 'clients') class="active " @endif>
                 <a href="{{ route('clients.index') }}" class="nav-link">
-                    <i class="fas fa-user nav-icon text-red"></i>
+                    <i class="fas fa-users nav-icon text-red"></i>
                     <p>Customer</p>
                 </a>
             </li>
-            <li class="nav-item" @if ($pageSlug == 'providers') class="active " @endif>
-                <a href="{{ route('providers.index') }}" class="nav-link">
-                    <i class="fas fa-book nav-icon text-red"></i>
-                    <p>Providers</p>
+            <li class="nav-item" @if ($pageSlug == 'reshome') class="active " @endif>
+                <a href="{{ url('/reshome') }}" class="nav-link">
+                    <i class="fas fa-scroll fa-solid text-red"></i>
+                    <p>User Reservation</p>
                 </a>
             </li>
-            <li class="nav-item" @if ($pageSlug == 'methods') class="active " @endif>
-                <a href="{{ route('methods.index') }}" class="nav-link">
-                    <i class="fas fa-wallet nav-icon text-red"></i>
-                    <p>Methods and Accounts</p>
-                </a>
-            </li>
+
+            
+
             <li class="nav-item ">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-cogs text-red"></i>
@@ -153,14 +112,13 @@
                             <p>Manage Users</p>
                         </a>
                     </li>
-
+                    <li class="nav-item" @if ($pageSlug == 'contact') class="active " @endif>
+                        <a href="{{ route('contact.index') }}" class="nav-link">
+                            <i class="far fa-circle fa-solid"></i>
+                            <p>Contact</p>
+                        </a>
+                    </li>
                 </ul>
-            </li>
-            <li class="nav-item ">
-                <a href="{{ route('admin.dashboard') }}" class="nav-link">
-                    <i class="nav-icon fas fa-scroll text-red"></i>
-                    <p>Reservation Dashboard</p>
-                </a>
             </li>
         </ul>
     </nav>

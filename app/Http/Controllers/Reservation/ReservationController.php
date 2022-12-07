@@ -14,8 +14,10 @@ class ReservationController extends Controller
 {
     public function index()
     {
-        $reservations = Reservation::all();
-        return view('reservation.admin.reservation.index',compact('reservations'));
+        $reservations = Reservation::all();        
+        $reservations = Reservation::paginate(10);        
+
+        return view('inventory.Food Reservation.index',compact('reservations'));
     }
     public function status($id){
         $reservation = Reservation::find($id);
@@ -24,7 +26,7 @@ class ReservationController extends Controller
         Notification::route('mail',$reservation->email )
             ->notify(new ReservationConfirmed());
 
-        return redirect()->back()->with('toast_success', 'Reservation confirmed successfully');
+        return redirect()->back()->with('toast_success', 'Reservation Confirmed Successfully');
     }
     public function destroy($id){
         Reservation::find($id)->delete();

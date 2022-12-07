@@ -36,36 +36,36 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
         Route::get('/categoryPDF', [ProductCategoryController::class, 'categoryPDF']);
         Route::resource('users', 'App\Http\Controllers\UserController');
         Route::resource('clients', 'App\Http\Controllers\ClientController');
-        Route::resource('transactions/transfer', 'App\Http\Controllers\TransferController');
-        Route::resource('methods', 'App\Http\Controllers\MethodController');
+        // Route::resource('transactions/transfer', 'App\Http\Controllers\TransferController');
+        // Route::resource('methods', 'App\Http\Controllers\MethodController');
         Route::resource('invoices', 'App\Http\Controllers\InvoiceController');
         Route::get('/generatePDF/{id}', [InvoiceController::class, 'generatePDF']);
-        Route::resource('providers', 'App\Http\Controllers\ProviderController');
+        // Route::resource('providers', 'App\Http\Controllers\ProviderController');
 
-        Route::resource('transactions', 'App\Http\Controllers\TransactionController')->except(['create', 'show']);
-        Route::get('transactions/stats/{year?}/{month?}/{day?}', ['as' => 'transactions.stats', 'uses' => 'App\Http\Controllers\TransactionController@stats']);
-        Route::get('transactions/{type}', ['as' => 'transactions.type', 'uses' => 'App\Http\Controllers\TransactionController@type']);
-        Route::get('transactions/{type}/create', ['as' => 'transactions.create', 'uses' => 'App\Http\Controllers\TransactionController@create']);
-        Route::get('transactions/{transaction}/edit', ['as' => 'transactions.edit', 'uses' => 'App\Http\Controllers\TransactionController@edit']);
+        // Route::resource('transactions', 'App\Http\Controllers\TransactionController')->except(['create', 'show']);
+        // Route::get('transactions/stats/{year?}/{month?}/{day?}', ['as' => 'transactions.stats', 'uses' => 'App\Http\Controllers\TransactionController@stats']);
+        // Route::get('transactions/{type}', ['as' => 'transactions.type', 'uses' => 'App\Http\Controllers\TransactionController@type']);
+        // Route::get('transactions/{type}/create', ['as' => 'transactions.create', 'uses' => 'App\Http\Controllers\TransactionController@create']);
+        // Route::get('transactions/{transaction}/edit', ['as' => 'transactions.edit', 'uses' => 'App\Http\Controllers\TransactionController@edit']);
 
-        Route::get('inventory/stats/{year?}/{month?}/{day?}', ['as' => 'inventory.stats', 'uses' => 'App\Http\Controllers\InventoryController@stats']);
-        Route::resource('inventory/receipts', 'App\Http\Controllers\ReceiptController')->except(['edit', 'update']);
-        Route::get('inventory/receipts/{receipt}/finalize', ['as' => 'receipts.finalize', 'uses' => 'App\Http\Controllers\ReceiptController@finalize']);
-        Route::get('inventory/receipts/{receipt}/product/add', ['as' => 'receipts.product.add', 'uses' => 'App\Http\Controllers\ReceiptController@addproduct']);
-        Route::get('inventory/receipts/{receipt}/product/{receivedproduct}/edit', ['as' => 'receipts.product.edit', 'uses' => 'App\Http\Controllers\ReceiptController@editproduct']);
-        Route::post('inventory/receipts/{receipt}/product', ['as' => 'receipts.product.store', 'uses' => 'App\Http\Controllers\ReceiptController@storeproduct']);
-        Route::match(['put', 'patch'], 'inventory/receipts/{receipt}/product/{receivedproduct}', ['as' => 'receipts.product.update', 'uses' => 'App\Http\Controllers\ReceiptController@updateproduct']);
-        Route::delete('inventory/receipts/{receipt}/product/{receivedproduct}', ['as' => 'receipts.product.destroy', 'uses' => 'App\Http\Controllers\ReceiptController@destroyproduct']);
+        // Route::get('inventory/stats/{year?}/{month?}/{day?}', ['as' => 'inventory.stats', 'uses' => 'App\Http\Controllers\InventoryController@stats']);
+        // Route::resource('inventory/receipts', 'App\Http\Controllers\ReceiptController')->except(['edit', 'update']);
+        // Route::get('inventory/receipts/{receipt}/finalize', ['as' => 'receipts.finalize', 'uses' => 'App\Http\Controllers\ReceiptController@finalize']);
+        // Route::get('inventory/receipts/{receipt}/product/add', ['as' => 'receipts.product.add', 'uses' => 'App\Http\Controllers\ReceiptController@addproduct']);
+        // Route::get('inventory/receipts/{receipt}/product/{receivedproduct}/edit', ['as' => 'receipts.product.edit', 'uses' => 'App\Http\Controllers\ReceiptController@editproduct']);
+        // Route::post('inventory/receipts/{receipt}/product', ['as' => 'receipts.product.store', 'uses' => 'App\Http\Controllers\ReceiptController@storeproduct']);
+        // Route::match(['put', 'patch'], 'inventory/receipts/{receipt}/product/{receivedproduct}', ['as' => 'receipts.product.update', 'uses' => 'App\Http\Controllers\ReceiptController@updateproduct']);
+        // Route::delete('inventory/receipts/{receipt}/product/{receivedproduct}', ['as' => 'receipts.product.destroy', 'uses' => 'App\Http\Controllers\ReceiptController@destroyproduct']);
 
-        Route::resource('sales', 'App\Http\Controllers\SaleController')->except(['edit', 'update']);
-        Route::get('sales/{sale}/finalize', ['as' => 'sales.finalize', 'uses' => 'App\Http\Controllers\SaleController@finalize']);
-        Route::get('sales/{sale}/product/add', ['as' => 'sales.product.add', 'uses' => 'App\Http\Controllers\SaleController@addproduct']);
-        Route::get('sales/{sale}/product/{soldproduct}/edit', ['as' => 'sales.product.edit', 'uses' => 'App\Http\Controllers\SaleController@editproduct']);
-        Route::post('sales/{sale}/product', ['as' => 'sales.product.store', 'uses' => 'App\Http\Controllers\SaleController@storeproduct']);
-        Route::match(['put', 'patch'], 'sales/{sale}/product/{soldproduct}', ['as' => 'sales.product.update', 'uses' => 'App\Http\Controllers\SaleController@updateproduct']);
-        Route::delete('sales/{sale}/product/{soldproduct}', ['as' => 'sales.product.destroy', 'uses' => 'App\Http\Controllers\SaleController@destroyproduct']);
+        // Route::resource('sales', 'App\Http\Controllers\SaleController')->except(['edit', 'update']);
+        // Route::get('sales/{sale}/finalize', ['as' => 'sales.finalize', 'uses' => 'App\Http\Controllers\SaleController@finalize']);
+        // Route::get('sales/{sale}/product/add', ['as' => 'sales.product.add', 'uses' => 'App\Http\Controllers\SaleController@addproduct']);
+        // Route::get('sales/{sale}/product/{soldproduct}/edit', ['as' => 'sales.product.edit', 'uses' => 'App\Http\Controllers\SaleController@editproduct']);
+        // Route::post('sales/{sale}/product', ['as' => 'sales.product.store', 'uses' => 'App\Http\Controllers\SaleController@storeproduct']);
+        // Route::match(['put', 'patch'], 'sales/{sale}/product/{soldproduct}', ['as' => 'sales.product.update', 'uses' => 'App\Http\Controllers\SaleController@updateproduct']);
+        // Route::delete('sales/{sale}/product/{soldproduct}', ['as' => 'sales.product.destroy', 'uses' => 'App\Http\Controllers\SaleController@destroyproduct']);
 
-        Route::get('clients/{client}/transactions/add', ['as' => 'clients.transactions.add', 'uses' => 'App\Http\Controllers\ClientController@addtransaction']);
+        // Route::get('clients/{client}/transactions/add', ['as' => 'clients.transactions.add', 'uses' => 'App\Http\Controllers\ClientController@addtransaction']);
 
         Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
         Route::match(['put', 'patch'], 'profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);

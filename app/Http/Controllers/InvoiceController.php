@@ -19,7 +19,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $clients = Client::get();
-        $invoices = Invoice::latest()->paginate(5);
+        $invoices = Invoice::latest()->paginate(10);
         $products = Product::get();
 
         return view('invoices.index',compact('clients', 'invoices', 'products')) ->with('i', (request()->input('page', 1)-1)*5);

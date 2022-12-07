@@ -20,19 +20,24 @@
                             @csrf
                             @method('put')
 
-                            <h6 class="heading-small text-muted mb-4">{{ __('Customer information') }}</h6>
+                            <h6 class="heading-small text-muted mb-4">{{ __('Customer Information') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Name') }}</label>
                                     <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', $client->name) }}" required autofocus>
                                     @include('alerts.feedback', ['field' => 'name'])
                                 </div>
-                                    <div class="col">
-                                        <label class="form-control-label" for="input-document_id">{{ __('Document Number') }}</label>
-                                        <input type="text" name="document_id" id="input-document_id" class="form-control form-control-alternative{{ $errors->has('document_id') ? ' is-invalid' : '' }}" placeholder="{{ __('Document Number') }}" value="{{ old('document_id', $client->document_id) }}" required>
-                                        @include('alerts.feedback', ['field' => 'document_id'])
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-document_id">{{ __('Document Number') }}</label>
+                                    <input type="text" name="document_id" id="input-document_id" class="form-control form-control-alternative{{ $errors->has('document_id') ? ' is-invalid' : '' }}" placeholder="{{ __('Document Number') }}" value="{{ old('document_id', $client->document_id) }}" required>
+                                    @include('alerts.feedback', ['field' => 'document_id'])
 
-                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('address') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-address">Address</label>
+                                    <input type="address" name="address" id="input-address" class="form-control form-control-alternative{{ $errors->has('address') ? ' is-invalid' : '' }}" placeholder="Address" value="{{ old('address', $client->address) }}" required>
+                                    @include('alerts.feedback', ['field' => 'address'])
                                 </div>
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-email">{{ __('Email') }}</label>

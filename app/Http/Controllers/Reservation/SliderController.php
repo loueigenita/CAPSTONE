@@ -18,7 +18,8 @@ class SliderController extends Controller
     public function index()
     {
         $sliders = Slider::all();
-        return view('reservation.admin.slider.index',compact('sliders'));
+        $sliders = Slider::paginate(10);
+        return view('inventory.Food Slider.index',compact('sliders'));
     }
 
     /**
@@ -28,7 +29,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('reservation.admin.slider.create');
+        return view('inventory.Food Slider.create');
     }
 
     /**
@@ -87,7 +88,7 @@ class SliderController extends Controller
     public function edit($id)
     {
         $slider = Slider::find($id);
-        return view('reservation.admin.slider.edit',compact('slider'));
+        return view('inventory.Food Slider.edit',compact('slider'));
     }
 
     /**

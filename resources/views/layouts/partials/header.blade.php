@@ -45,22 +45,21 @@
                 <a class="navbar-link" data-toggle="dropdown" data-bs-toggle="dropdown">
                     <i class="fas fa-bell"></i>
                   @empty($reservations->count() == 0)
-                    <span class="fas fa-solid fa-circle font-weight-bold text-danger navbar-badge"></span>
+                    <span class="badge badge-danger navbar-badge">{{$reservations->count()}}</span>
                 @endempty
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                   <span class="dropdown-item dropdown-header text-center">RESERVATIONS</span>
                   <div class="dropdown-divider"></div>
-                  <a href="{{route('admin.dashboard')}}" class="dropdown-item"><i class="fas fa-ticket-alt text-warning"></i> Reservations <span class="badge badge-primary">{{ $reservations->count()}}</span></a>
-                  <a href="{{route('reservation.index')}}" class="dropdown-item"><i class="fas fa-check text-warning"></i> Confirmed Reservations <span class="badge badge-primary">{{ $reservations1->count()}}</a>
-                </div>
+                  <a href="{{route('reservation.index')}}" class="dropdown-item"><i class="fas fa-ticket-alt text-warning"></i> Not Confirmed Reservations <span class="badge badge-primary">{{ $reservations->count()}}</span></a>
+               </div>
             </li>
 
             <li class="nav-item dropdown mt-2">
             <a class="navbar-link mx-4" data-toggle="dropdown" data-bs-toggle="dropdown">
                 <i class="fas fa-comment text-warning"></i>
               @empty($contacts->count() == 0)
-                <span class="fas fa-solid fa-circle font-weight-bold text-danger navbar-badge"></span>
+                <span class="badge badge-danger navbar-badge">{{$contacts->count()}}</span>
             @endempty
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">

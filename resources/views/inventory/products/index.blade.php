@@ -22,14 +22,13 @@
                 </div>
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
-                        <table class="table table-striped table-bordered shadow text-center">
+                        <table class="table table-striped shadow text-center">
                             <thead class=" bg-dark text-light">
                                 <th scope="col">Category</th>
                                 <th scope="col">Product</th>
                                 <th scope="col">Base Price</th>
                                 <th scope="col">Stock</th>
                                 <th scope="col">Faulty</th>
-                                <th scope="col">Total Sold</th>
                                 <th scope="col">Action</th>
                             </thead>
                             <tbody>
@@ -40,7 +39,6 @@
                                         <td>{{ $product->price }}</td>
                                         <td>{{ $product->stock }}</td>
                                         <td>{{ $product->stock_defective }}</td>
-                                        <td>{{ $product->solds->sum('qty') }}</td>
                                         <td>
                                             <a href="{{ route('products.show', $product) }}" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="More Details">
                                                 <i class="fas fa-eye"></i>
@@ -61,10 +59,13 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
                 </div>
                 <div class="card-footer py-4">
                     <div class="d-flex justify-content-end">
                         {{ $products->links() }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

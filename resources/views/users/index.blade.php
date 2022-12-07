@@ -16,7 +16,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
-                        <table class="table table-striped table-bordered shadow text-center">
+                        <table class="table table-striped shadow text-center">
                             <thead class=" bg-dark text-light">
                                 <th scope="col">{{ __('Name') }}</th>
                                 <th scope="col">{{ __('Email') }}</th>

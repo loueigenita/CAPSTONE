@@ -26,7 +26,6 @@
                 <th scope="col">Base Price</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Faulty</th>
-                <th scope="col">Total Sold</th>
             </thead>
             <tbody>
                 @foreach ($products as $product)
@@ -36,7 +35,6 @@
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->stock }}</td>
                         <td>{{ $product->stock_defective }}</td>
-                        <td>{{ $product->solds->sum('qty') }}</td>
                     </tr>
                 @endforeach
             </tbody>

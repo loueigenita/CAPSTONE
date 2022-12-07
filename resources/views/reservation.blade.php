@@ -61,7 +61,7 @@
                 <li><a href="#reserve">reservation</a></li>
                 <li><a href="#contact">contact</a></li>
 
-                <li><a href="{{ route('admin.dashboard') }}">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
             </ul>
         </div>
     </div>
@@ -186,7 +186,7 @@
 
 
 <section class="reservation">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontends/images/icons/reservation.png') }}">
+    {{-- <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontends/images/icons/reservation.png') }}"> --}}
     <div class="wrapper">
         <div class="container-fluid">
             <div class=" section-content">

@@ -18,9 +18,10 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
+        $items = Item::paginate(3);
         $categories = Category::get();
 
-        return view('reservation.admin.item.index',compact('items','categories'));
+        return view('inventory.Food Products.index',compact('items','categories'));
 
     }
 
@@ -32,7 +33,7 @@ class ItemController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('reservation.admin.item.create',compact('categories'));
+        return view('inventory.Food Products.create',compact('categories'));
     }
 
     /**

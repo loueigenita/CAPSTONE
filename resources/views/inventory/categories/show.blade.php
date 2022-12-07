@@ -5,11 +5,19 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Category Information</h4>
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <h3 class="mb-0">Category Information</h3>
+                        </div>
+                        <div class="col-4 text-right">
+                            <a href="{{ route('products.index') }}" class="btn btn-sm btn-primary">Back to List</a>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
-                    <table class="table table-striped table-bordered shadow text-center">
+                    <table class="table table-striped shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
                             <th>Name</th>
@@ -29,7 +37,6 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
             </div>
         </div>
     </div>
@@ -41,7 +48,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
-                    <table class="table table-striped table-bordered shadow text-center">
+                    <table class="table table-striped shadow text-center">
                         <thead class=" bg-dark text-light">
                             <th>ID</th>
                             <th>Description</th>
@@ -49,9 +56,6 @@
                             <th>Stock</th>
                             <th>Defective Stock</th>
                             <th>Base price</th>
-                            <th>Average Price</th>
-                            <th>Total sales</th>
-                            <th>Income Produced</th>
                             <th>Action</th>
                         </thead>
                         <tbody>
@@ -59,13 +63,10 @@
                                 <tr>
                                     <td>{{$product->id}}</td>
                                     <td>{{$product->description}}</td>
-                                    <td><a href="{{ route('products.show', $product) }}">{{ $product->name }}</a></td>
+                                    <td>{{ $product->name }}</td>
                                     <td>{{ $product->stock }}</td>
                                     <td>{{ $product->stock_defective }}</td>
                                     <td>{{ $product->price }}</td>
-                                    <td>{{ $product->solds->avg('price') }}</td>
-                                    <td>{{ $product->solds->sum('qty') }}</td>
-                                    <td>{{ $product->solds->sum('total_amount') }}</td>
                                     <td>
                                         <a href="{{ route('products.show', $product) }}" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="bottom" title="More Details">
                                             <i class="fas fa-eye"></i>

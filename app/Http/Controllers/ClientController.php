@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sale;
 use App\Models\Client;
-use App\Models\Transaction;
-use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientRequest;
 
@@ -97,12 +94,5 @@ class ClientController extends Controller
         return redirect()
             ->route('clients.index')
             ->with('toast_success','Deleted Successfully');
-    }
-
-    public function addtransaction(Client $client)
-    {
-        $payment_methods = PaymentMethod::all();
-
-        return view('clients.transactions.add', compact('client','payment_methods'));
     }
 }

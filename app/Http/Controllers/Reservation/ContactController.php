@@ -12,12 +12,13 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all();
-        return view('reservation.admin.contact.index',compact('contacts'));
+        $contacts = Contact::paginate(8);
+        return view('inventory.Contact.index',compact('contacts'));
     }
     public function show($id)
     {
         $contact = Contact::find($id);
-        return view('reservation.admin.contact.show',compact('contact'));
+        return view('inventory.Contact.show',compact('contact'));
     }
 
     public function destroy($id)

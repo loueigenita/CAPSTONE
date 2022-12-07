@@ -15,7 +15,7 @@
       <div class="nav-bar">
         <div class="brand">
           <a href="#hero">
-            <h1><span>M</span>ater Dei<span>C</span>ollege</h1>
+            <h1 style="font-family: Old English Text MT">Mater Dei College</h1>
           </a>
         </div>
         <div class="nav-list">
@@ -57,12 +57,12 @@
         <div class="service-bottom">
         <div class="service-item">
           <div class="icon"><img src="http://materdeicollege.com/images/grading_icon.png" /></div>
-          <h2><a href="https://gradeportal.materdeicollege.com">Grade Portal</a></h2>
+          <h2><a href="http://gradeportal.materdeicollege.com">Grade Portal</a></h2>
           <p>The college has its grade portal to easily access the students individual academic performance. And also to view their semester's term grade.</p>
         </div>
         <div class="service-item">
           <div class="icon"><img src="http://materdeicollege.com/images/moodle_icon.png" /></div>
-          <h2><a href="https://lms.materdeicollege.com">LMS</a></h2>
+          <h2><a href="http://lms.materdeicollege.com">LMS</a></h2>
           <p>The college has its lms to easily access the students their online activities. And also this is a web based learning education develop by the MDC.</p>
 
         </div>
@@ -197,7 +197,7 @@ p {
 	text-align: center;
 }
 .section-title span {
-	color: rgb(26, 112, 182);
+	color: rgb(0, 26, 255);
 }
 
 .cta {
@@ -219,11 +219,10 @@ p {
 }
 .brand h1 {
 	font-size: 3rem;
-	text-transform: uppercase;
 	color: white;
 }
 .brand h1 span {
-	color: rgb(25, 0, 255);
+	color: rgb(255, 255, 255);
 }
 
 /* Header section */
@@ -252,7 +251,7 @@ p {
 #header .nav-list ul {
 	list-style: none;
 	position: absolute;
-	background-color: rgb(49, 94, 218);
+	background-color: rgb(86, 92, 109);
 	width: 100vw;
 	height: 100vh;
 	left: 100%;

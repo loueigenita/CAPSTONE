@@ -24,7 +24,9 @@ class UserReservationController extends Controller
         $sliders = Slider::get();
         $categories = Category::get();
         $items = Item::get();
-        $reservations = Reservation::all();
+        $reservations = Reservation::all();        
+        $reservations = Reservation::paginate(1);        
+
         return view('reservation.user.reservation',compact('reservations', 'sliders', 'categories', 'items'));
     }
 }
